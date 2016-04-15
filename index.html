@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>SimplePay Gateway Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style type="text/css">
+        html {
+            font-size: 100%;
+        }
+
+        h1 {
+            color: #77439E;
+        }
+
+        h2 {
+            color: #77439E;
+        }
+
+        h3 {
+            color: #bc75f3;
+        }
+
+        .margin-top-sm {
+            margin-top: .5rem;
+        }
+
+        .margin-top-md {
+            margin-top: 1rem;
+        }
+
+        .margin-top-lg {
+            margin-top: 2rem;
+        }
+
+        button.simplepay-button,
+        button.simplepay-button:hover {
+            background: #77439E;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        button.simplepay-button span {
+            position: relative;
+            top: .3rem;
+        }
+
+        button.simplepay-button img {
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Sale Page</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Configured Buttons </h3>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post" action="https://checkout.simplepay.ng/v1/payments/form/">
+                    <input type="hidden" name="description" value="something here to describe"/>
+                    <input type="hidden" name="key" value="test_pu_demo"/>
+                    <input type="hidden" name="payment_type" value="checkout"/>
+                    <input type="hidden" name="currency" value="NGN"/>
+                    <input type="hidden" name="amount" value="10000"/>
+                    <input type="hidden" name="payment_id" value="XVTID"/>
+                    <input type="hidden" name="success_url" value="http://localhost:3000/success.php"/>
+                    <input type="hidden" name="cancel_url" value="http://localhost:3000/cancel.php"/>
+                    <input type="hidden" name="fail_url" value="http://localhost:3000/fail.php"/>
+                   
+                    <button type="submit" class="btn btn-lg btn-block simplepay-button">
+                         <span>Pay with</span>
+                         <img src="https://developers.simplepay.ng/img/simplepay-white-logo.png" alt="SimplePay Pay Button" /> (1)
+                    </button>
+               </form>
+               <p class="help-block margin-top-md">(1) Open payment gateway requesting phone and email</p>
+               <p class="help-block">(2) Open payment gateway only requesting card data</p>
+            </div>
+            
+                
+            <div class="col-md-4">
+                <form method="post" action="https://checkout.simplepay.ng/v1/payments/form/">
+                    <input type="hidden" name="email" value="test@mysite.com"/>
+                    <input type="hidden" name="phone" value="+23412345678"/>
+
+                    <input type="hidden" name="description" value="something here to describe"/>
+                    <input type="hidden" name="key" value="test_pu_demo"/>
+                    <input type="hidden" name="payment_type" value="checkout"/>
+                    <input type="hidden" name="currency" value="NGN"/>
+                    <input type="hidden" name="amount" value="10000"/>
+                    <input type="hidden" name="payment_id" value="XVTID"/>
+                    <input type="hidden" name="success_url" value="http://localhost:3000/success.php"/>
+                    <input type="hidden" name="cancel_url" value="http://localhost:3000/cancel.php"/>
+                    <input type="hidden" name="fail_url" value="http://localhost:3000/fail.php"/>
+                   
+                    <button type="submit" class="btn btn-lg btn-block simplepay-button">
+                         <span>Pay with</span>
+                         <img src="https://developers.simplepay.ng/img/simplepay-white-logo.png" alt="SimplePay Pay Button" /> (2)
+                    </button>
+               </form>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 margin-top-lg">
+                <h3>Payment with form with details</h3>
+            </div>
+        </div>
+        
+        <div class="row ">
+            <div class="col-md-4">
+                <form method="post" action="https://checkout.simplepay.ng/v1/payments/form/">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="input" name="email" placeholder="email" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="input" name="phone" placeholder="phone" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="hidden" name="description" value="something here to describe"/>
+                            <input type="hidden" name="key" value="test_pu_demo"/>
+                            <input type="hidden" name="payment_type" value="checkout"/>
+                            <input type="hidden" name="currency" value="NGN"/>
+                            <input type="hidden" name="amount" value="10000"/>
+                            <input type="hidden" name="payment_id" value="XVTID"/>
+                            <input type="hidden" name="success_url" value="http://localhost:3000/success.php"/>
+                            <input type="hidden" name="cancel_url" value="http://localhost:3000/cancel.php"/>
+                            <input type="hidden" name="fail_url" value="http://localhost:3000/fail.php"/>
+                           
+                            <button type="submit" class="btn btn-lg btn-block simplepay-button">
+                                 <span>Pay with</span>
+                                 <img src="https://developers.simplepay.ng/img/simplepay-white-logo.png" alt="SimplePay Pay Button" /> 
+                            </button>
+                        </div>
+                    </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
