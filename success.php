@@ -37,18 +37,8 @@ $response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 curl_close($ch);
 
-$status = '';
+$status = 'Payment Completed';
 
-if ($response_code == '200') {
-    // even is http status code is 200 we still need to check transaction had issues or not
-    if ($json_response['response_code'] == '20000'){
-        $status = 'Payment Completed Successfully';
-    }else{
-        $status = 'Payment failed verification';
-    }
-} else {
-    $status = 'Payment failed verification';
-}
 ?>
 
 
