@@ -50,14 +50,14 @@ if ($response_code == '200') {
         header('Location: success.php');
     } else {
         // failed to charge the card
-        header('Location: failed.php');
+        header('Location: fail.php');
     }
 } else if ($status == 'true') {
     // even though it failed the call to card charge, card payment was already processed
     header('Location: success.php');
 } else {
     // failed to charge the card
-    header('Location: failed.php');
+    header('Location: fail.php');
 }
 
 ?>
